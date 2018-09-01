@@ -9,9 +9,10 @@ for rec in records:
     rec['fee'] = rec['fee'] / 100
     rec['trans_id'] = str(rec['trans_id'] + '\t')
     rec['out_trade_no'] = str(rec['out_trade_no'] + '\t')
+    rec['total_refund_fee'] = str(rec['total_refund_fee'] + '\t')
     rec['timestamp'] = time.strftime("%Y/%m/%d %H:%M:%S", time.localtime(rec['timestamp']))
 
-with open("test.csv", "w+", encoding="gbk", newline="") as output:
+with open("test.csv", "w+", encoding="utf_8_sig", newline="") as output:
     csvwriter = csv.writer(output, dialect=("excel"))
     csvwriter.writerow((records[0]).keys())
 
