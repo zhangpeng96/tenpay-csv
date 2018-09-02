@@ -7,6 +7,7 @@ records = data['record']
 
 for rec in records:
     rec['fee'] = rec['fee'] / 100
+    rec['total_refund_fee'] = rec['total_refund_fee'] / 100
     rec['trans_id'] = str(rec['trans_id'] + '\t')
     rec['out_trade_no'] = str(rec['out_trade_no'] + '\t')
     rec['total_refund_fee'] = str(rec['total_refund_fee'] + '\t')
